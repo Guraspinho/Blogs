@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+      body{
+        /* max-width: 1200px; */
+        margin: 20px auto;
+        padding: 0 20px;
+        font-family: 'Noto Serif', serif;
+        max-width: 1400px;
+      }
+      p, h1, h2, h3, a, ul{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        color: #222;
+      }
+  
+      
+      /* home page styles */
+      .singleblogDiv{
+        display: inline-block;
+        margin: 40px 0;
+        padding-left: 30px;
+        width: 500px;
+        border-left: 6px solid crimson;
+        transition: border-left 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;  
+      }
+      .singleblogDiv:hover {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+        transform: scale(1.1);
+      }
+      .blogs a:hover h3{
+        color: crimson;
+        transition: color 0.3s ease; 
+      }
+
+      .snippet, .singleblog
+      {
+        width: 100%;
+      }
+      .title
+      {
+        padding-top: 7px;
+      } 
+      .snippet
+      {
+        padding-bottom: 7px;
+      }
+
+      .blogsdiv
+      {
+      display: block;
+      height: 100px;
+      margin-right: 100px;
+      }
+      
+
+      /* details page styles */
+
+      .blogBody
+      {
+        display: inline;
+        width: 200px;
+        word-wrap: break-word;
+        
+      }
+      .content
+      {
+        margin-bottom: 50px;
+      }
+  
+      /* create page styles */
+      .create-blog form{
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+      .create-blog input,
+      .create-blog textarea{
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 8px;
+        border-radius: 5px;
+        border: solid crimson 1.5px;
+      }
+      .create-blog label{
+        display: block;
+        margin-top: 24px;
+      }
+      textarea{
+        height: 120px;
+      }
+
+
+    

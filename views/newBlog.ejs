@@ -1,0 +1,23 @@
+<html lang="en">
+<%- include("./resources/head.ejs") %>
+
+<body>
+  <%- include("./resources/nav.ejs") %>
+
+  <div class="create-blog content">
+    <form action="/" method="post">
+      <label for="title">Blog title:</label>
+      <input placeholder="Enter your title" type="text" id="title" name="title" required>
+      <label for="snippet">Blog snippet:</label>
+      <input placeholder="Enter your snippet" type="text" id="snippet" name="snippet" required>
+      <label for="body">Blog body:</label>
+      <textarea placeholder="Enter your blog content" id="body" name="body" required></textarea>
+      <button class="submitButton">Submit</button>
+      
+    </form>
+  </div>
+
+  <%- include("./resources/footer.ejs") %>
+
+</body>
+</html>

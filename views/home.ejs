@@ -1,0 +1,58 @@
+<html lang="en">
+<%- include("./resources/head.ejs") %>
+
+<body>
+  <%- include("./resources/nav.ejs") %>
+
+  <div class="blogs content">
+    <h2>All Blogs</h2>
+
+    <% if (blogs.length > 0) { %>
+      <% blogs.forEach(blog => { %>
+        <div class="blogsDiv">
+          <div class="singleBlogDiv">
+            <a class="singleBlog" href="/<%= blog._id%>">
+              <h3 class="title"><%= blog.title %></h3>
+              <p class="snippet"><%= blog.snippet %></p>
+            </a>
+          </div>
+          <a class="delete" data-doc="<%= blog._id %>">
+            <img src="trashcan.svg" alt="delete icon">
+          </a>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>There are no blogs to display...</p>
+    <% } %>
+  </div>
+
+  <%- include("./resources/footer.ejs") %>
+
+  <script>
+
+ 
+    const deleteButtons = document.querySelectorAll('a.delete');
+
+    // Loop through each delete button and attach the event listener
+    deleteButtons.forEach(trashcan => {
+      trashcan.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent the default behavior of the link
+
+        const confirmed = window.confirm('Are you sure you want to delete?');
+        if (confirmed) {
+          const endpoint = `/${trashcan.dataset.doc}`;
+
+          fetch(endpoint, { method: 'DELETE' })
+            .then((response) => response.json())
+            .then((data) => {
+              window.location.href = data.redirect;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
