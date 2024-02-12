@@ -16,6 +16,7 @@ const blog_home = (req,res) =>
 }
 
 
+
 // gets a create page
 
 const blog_create_get = (req,res) =>

@@ -11,12 +11,17 @@
       <% blogs.forEach(blog => { %>
         <div class="blogsDiv">
           <div class="singleBlogDiv">
+
             <a class="singleBlog" href="/<%= blog._id%>">
+
+
               <h3 class="title"><%= blog.title %></h3>
               <p class="snippet"><%= blog.snippet %></p>
             </a>
           </div>
+          
           <a class="delete" data-doc="<%= blog._id %>">
+
             <img src="trashcan.svg" alt="delete icon">
           </a>
         </div>
@@ -27,6 +32,7 @@
   </div>
 
   <%- include("./resources/footer.ejs") %>
+  
 
   <script>
 
@@ -51,8 +57,9 @@
               console.log(err);
             });
         }
-      });
+      }); 
     });
   </script>
 </body>
 </html>
+
